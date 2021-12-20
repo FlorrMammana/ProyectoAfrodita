@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+//import NavBar from "./components/NavBar"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import Main from "./components/Main"
+//import ItemListContainer from './components/ItemListContainer'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+    const titulo = "E-Commerce"
+
+    const footerData = {
+        copy : "Copyright &copy; 2021", 
+        author : "Florencia Mammana"
+    }
+    const ingreso = "Home"
+
+    return(
+        <>  
+            <Header titulo={titulo}/>
+            <Main ingreso={ingreso}/>
+            <Footer data={footerData}/>
+        </>
+    )
+} 
+
+export default App
+
+//            <ItemListContainer/>

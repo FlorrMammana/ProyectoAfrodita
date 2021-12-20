@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+#root > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: yellow;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    >div {
+        display: flex;
+        align-items: center;
+        img {
+            height: 60px;
+        }
+    }
+    nav {
+        a {
+            margin-left: 1rem;
+        }
+    }
+}
