@@ -1,13 +1,12 @@
 //import Header from './components/Header'
-//import Footer from './componets/Footer'
 import ItemListContainer from "./ItemListContainer"
 
 function Main(){
     return(
         <main>
             <header>
-                <h1>BIENVENIDOS</h1>
-                <ItemListContainer/>
+                <h1>WELCOME TO AFRODITA</h1>
+                <ItemListContainer initial={1} stock={10}/>
             </header>
         </main>
     )
