@@ -1,14 +1,9 @@
-import Count from "./Count"
+import ItemList from "./ItemList"
 
 const ItemListContainer = () => {
-  
-    const onAdd = () => {
-        alert('Pulsa aceptar para continuar la compra')
-    }
-
     return (
             <div>
-                <Count initial={1} stock={10} onAdd={onAdd}/>
+                <ItemList />
             </div>
       
     )
