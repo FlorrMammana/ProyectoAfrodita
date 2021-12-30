@@ -1,7 +1,9 @@
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Main from "./components/Main"
-//import ItemListContainer from './components/ItemListContainer'
+import ItemListContainer from "./components/ItemListContainer"
+import ItemDetailContainer from "./components/ItemDetailsContainer"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
@@ -12,12 +14,18 @@ function App() {
     }
     const ingreso = "Home"
 
-    return(
-        <>  
-            <Header/>
-            <Main ingreso={ingreso}/>
-            <Footer data={footerData}/>
-        </>
+        return (
+            <BrowserRouter>
+                <Header/>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Main ingreso={ingreso}/>} />
+                        <Route path="/productos" element={<ItemListContainer />} />
+                        <Route path="/producto/:id" element={<ItemDetailContainer />} />
+                    </Routes>
+                </main>
+                <Footer data={footerData} />
+            </BrowserRouter>
     )
 } 
 

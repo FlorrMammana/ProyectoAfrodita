@@ -26,7 +26,6 @@ const Count = ({stock, initial}) => {
                 <button type="button" className="btn btn-secondary" onClick={aumentarContador}>Agregar</button>
                 <button type="button" className="btn btn-outline-secondary" onClick={confirmarContador}>Finalizar</button>
                 <button type="button" className="btn btn-secondary" onClick={disminuirContador}>Quitar</button>
-
             </div>
         </div>
     )

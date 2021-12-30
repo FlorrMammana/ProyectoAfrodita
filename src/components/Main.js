@@ -1,5 +1,4 @@
 import ItemListContainer from "./ItemListContainer"
-
 function Main(){
     return(
         <main>
@@ -12,5 +11,3 @@ function Main(){
 }
 
 export default Main
-
-//                

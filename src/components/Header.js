@@ -6,7 +6,7 @@ function Header ({titulo}) {
         <header>
             <img src="/afroditaSinFondo.png" alt="logo"/>
             <h1>{titulo}</h1>
-            <NavBar/>
+            <NavBar />
         </header>
     )
 }
