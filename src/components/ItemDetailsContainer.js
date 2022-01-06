@@ -9,7 +9,7 @@ let productos =
         "nombre":"Esculpidas",
         "detalle":"Esculpidas",  
         "precio":1500,
-        "img":"logoCamila.png"
+        "img":"../assets/afroditaSinFondo.png"
     }
 
 const ItemDetailsContainer = () => {

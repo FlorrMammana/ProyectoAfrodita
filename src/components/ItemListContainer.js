@@ -7,14 +7,16 @@ let productos = [
     {   
         "id": 1,
         "stock":20,
+        "categoria":"manos",
         "nombre":"Esculpidas",
         "detalle":"Esculpidas",  
         "precio":1500,
-        "img":"./logoCamila.png"
+        "img":"afroditaSinFondo.png"
     },
     {  
         "id": 2,
         "stock":20,
+        "categoria":"manos",
         "nombre":"Semi-Permante",
         "detalle":"Semi-Permante", 
         "precio":500,
@@ -22,7 +24,8 @@ let productos = [
     },
     {   
         "id": 3,
-        "stock":20, 
+        "stock":20,
+        "categoria":"manos",
         "nombre":"Kapping", 
         "detalle":"Kapping", 
         "precio":800,
@@ -30,7 +33,8 @@ let productos = [
     },
     {   
         "id": 4,
-        "stock":20, 
+        "stock":20,
+        "categoria":"manos",
         "nombre":"Estetica de Pies", 
         "detalle":"Estetica de pies", 
         "precio":700,
@@ -38,7 +42,8 @@ let productos = [
     },
     {   
         "id": 5,
-        "stock":20, 
+        "stock":20,
+        "categoria":"lashes",
         "nombre":"Clasicas", 
         "detalle":"Clasicas", 
         "precio":1200,
@@ -46,7 +51,8 @@ let productos = [
     },
     {   
         "id": 6,
-        "stock":20, 
+        "stock":20,
+        "categoria":"lashes",
         "nombre":"Volumen", 
         "detalle":"Volumen", 
         "precio":1700,
@@ -54,7 +60,8 @@ let productos = [
     },
     {   
         "id": 7,
-        "stock":20, 
+        "stock":20,
+        "categoria":"lashes",
         "nombre":"Mega-Volumen", 
         "detalle":"Mega-Volumen", 
         "precio":2500,
@@ -62,7 +69,8 @@ let productos = [
     },
     {   
         "id": 8,
-        "stock":20, 
+        "stock":20,
+        "categoria":"combos",
         "nombre":"Promo Esculpidas+Volumen", 
         "detalle":"Esculpidas+Volumen", 
         "precio":3000,
@@ -70,7 +78,8 @@ let productos = [
     },
     {   
         "id": 9,
-        "stock":20, 
+        "stock":20,
+        "categoria":"combos",
         "nombre":"Promo Kapping+Mega-Volumen", 
         "detalle":"Kapping+Mega-Volumen", 
         "precio":3500,
@@ -92,7 +101,6 @@ const ItemListContainer = () => {
 
         promesa
             .then((productos) => {
-                console.log("Todo bien")
                 setLista(productos)
             })
             .catch(() => {
