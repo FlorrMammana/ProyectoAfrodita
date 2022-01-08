@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+//import { useParams } from "react-router-dom"
 import ItemDetails from "./ItemDetails"
- 
+
 let productos = 
     {   
         "id": 1,
@@ -14,23 +14,20 @@ let productos =
 
 const ItemDetailsContainer = () => {
 
-    const { id } = useParams()
+    //const { id } = useParams()
 
     let [producto, setProducto] = useState(null)
 
     useEffect(() => {
-        const promesa = new Promise((res, rej) => {
-             setTimeout(() => {
-                 res(producto)
-             }, 2000)
-         })
- 
-         promesa
-             .then((producto) => {
-                 setProducto(producto)
-             })
-     }, [id])
- 
+        const promesa = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res(productosIniciales) // itemlistcontainer
+            },5000)
+        }) 
+        
+        .then((res)=>{
+            setProducto(res.find())//elegir el producto
+        })
      return (
          <div>
              <ItemDetails producto={productos} />

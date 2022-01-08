@@ -22,6 +22,7 @@ function App() {
                         <Route path="/" element={<Main ingreso={ingreso}/>} />
                         <Route path="/productos" element={<ItemListContainer />} />
                         <Route path="/producto/:id" element={<ItemDetailContainer />} />
+                        <Route path="/categoria/:nombre" element={<ItemListContainer/>} />
                     </Routes>
                 </main>
                 <Footer data={footerData} />

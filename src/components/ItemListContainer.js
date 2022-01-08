@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import Count from "./Count"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 
@@ -20,7 +19,7 @@ let productos = [
         "nombre":"Semi-Permante",
         "detalle":"Semi-Permante", 
         "precio":500,
-        "img":"logoCamila.png"
+        "img":"afroditaSinFondo.png"
     },
     {   
         "id": 3,
@@ -29,7 +28,7 @@ let productos = [
         "nombre":"Kapping", 
         "detalle":"Kapping", 
         "precio":800,
-        "img":"logoCamila.png"
+        "img":"afroditaSinFondo.png"
     },
     {   
         "id": 4,
@@ -38,7 +37,7 @@ let productos = [
         "nombre":"Estetica de Pies", 
         "detalle":"Estetica de pies", 
         "precio":700,
-        "img":"logoCamila.png"
+        "img":"afroditaSinFondo.png"
     },
     {   
         "id": 5,
@@ -47,7 +46,7 @@ let productos = [
         "nombre":"Clasicas", 
         "detalle":"Clasicas", 
         "precio":1200,
-        "img":"logoKatya.png"
+        "img":"afroditaSinFondo.png"
     },
     {   
         "id": 6,
@@ -56,7 +55,7 @@ let productos = [
         "nombre":"Volumen", 
         "detalle":"Volumen", 
         "precio":1700,
-        "img":"logoKatya.png"
+        "img":"afroditaSinFondo.png"
     },
     {   
         "id": 7,
@@ -65,7 +64,7 @@ let productos = [
         "nombre":"Mega-Volumen", 
         "detalle":"Mega-Volumen", 
         "precio":2500,
-        "img":"logoKatya.png"
+        "img":"afroditaSinFondo.png"
     },
     {   
         "id": 8,
@@ -89,9 +88,9 @@ let productos = [
 const ItemListContainer = () => {
 
     let [lista, setLista] = useState([])
-    const { id } = useParams()
+    //const { id } = useParams()
 
-    
+    /*
     useEffect(() => {
        const promesa = new Promise((res, rej) => {
             setTimeout(() => {
@@ -103,18 +102,23 @@ const ItemListContainer = () => {
             .then((productos) => {
                 setLista(productos)
             })
-            .catch(() => {
-                console.log("Todo mal")
-            })
-    }, [id])
+    }, [id])*/
 
+    const { nombre } = useParams()
+
+    useEffect(() => {
+        if(nombre){
+            let categoria = productos.filter(function(producto) {return producto["categoria"] === nombre})
+            setLista(categoria)
+        }else{
+            setLista(productos)
+        }       
+    },[nombre])
     return (
         <div> 
             <ItemList lista={lista} />
-            <Count/> 
-            
         </div>
-    )
+    )  
 }
 
 

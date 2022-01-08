@@ -4,7 +4,7 @@ function Header ({titulo}) {
 
   return(
         <header>
-            <img src="/afroditaSinFondo.png" alt="logo"/>
+                <a href="/"><img src="/afroditaSinFondo.png" alt="logo" className="logo"/></a>
             <h1>{titulo}</h1>
             <NavBar />
         </header>

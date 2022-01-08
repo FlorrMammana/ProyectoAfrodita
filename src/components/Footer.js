@@ -2,7 +2,7 @@
 const Footer = ({data : {copy, author}}) => {
     return(
         <footer>
-            <p>{copy} - {author}</p>
+            <p className="text-center">{copy} - {author}</p>
         </footer>
     )
 }
