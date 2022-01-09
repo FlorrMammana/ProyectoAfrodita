@@ -2,9 +2,9 @@ import Count from "./Count"
 
 const ItemDetails = ({producto}) =>{       
             return(
-                   <div className="card">
-                   <img src={producto.img} alt="imagen ilustrativa"/>
-                        <div className="card-body">
+                   <div className="card ">
+                   <img src={producto.img} alt="imagen ilustrativa" className="text-center centro"/>
+                        <div className="card-body text-center">
                             <h5 className="card-title text-center">{producto.nombre}</h5>
                             <p className="card-text">{producto.detalle}</p>
                         </div>
@@ -16,3 +16,4 @@ const ItemDetails = ({producto}) =>{
             )
 }
 export default ItemDetails
+
