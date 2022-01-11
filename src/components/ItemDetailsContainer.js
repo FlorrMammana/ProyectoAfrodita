@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetails from "./ItemDetails"
 //import {productos} from "./ItemListContainer"
+import Welcome from "./Cart"
 
 let productos = [
     {   
@@ -113,6 +114,7 @@ const ItemDetailsContainer = () => {
      return (
          <div>
              <ItemDetails producto={producto} />
+             <Welcome/>
          </div>
      )
 }

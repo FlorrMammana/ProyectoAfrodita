@@ -23,9 +23,9 @@ const Count = ({stock, initial}) => {
         <div>
             <p className="text-center"><strong >Seleccionado: </strong>{contador} unidades</p>
             <div className="vstack gap-2">
-                <button type="button" className="btn btn-secondary" onClick={aumentarContador}>Agregar</button>
-                <button type="button" className="btn btn-outline-secondary" onClick={confirmarContador}>Finalizar</button>
-                <button type="button" className="btn btn-secondary" onClick={disminuirContador}>Quitar</button>
+                <button type="button" className="btn btn-secondary" onClick={aumentarContador}>+</button>
+                <button type="button" className="btn btn-outline-secondary" onClick={confirmarContador}><a href="/Cart" className="carro">Agregar al carrito</a></button>
+                <button type="button" className="btn btn-secondary" onClick={disminuirContador}>-</button>
             </div>
         </div>
     )
