@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailsContainer"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Cart from './components/Cart'
+import CartProvider from './context/CartContext'
 
 function App() {
 
@@ -16,19 +17,22 @@ function App() {
     const ingreso = "Home"
 
         return (
-            <BrowserRouter>
-                <Header/>
-                <main>
-                    <Routes>
-                        <Route path="/" element={<Main ingreso={ingreso}/>} />
-                        <Route path="/productos" element={<ItemListContainer />} />
-                        <Route path="/producto/:id" element={<ItemDetailContainer />} />
-                        <Route path="/categoria/:nombre" element={<ItemListContainer/>} />
-                        <Route path="/cart" element={<Cart/>} />
-                    </Routes>
-                </main>
-                <Footer data={footerData} />
-            </BrowserRouter>
+            <CartProvider>
+                <BrowserRouter>
+                    <Header/>
+                    <main>
+                        <Routes>
+                            <Route path="/" element={<Main ingreso={ingreso}/>} />
+                            <Route path="/productos" element={<ItemListContainer />} />
+                            <Route path="/producto/:id" element={<ItemDetailContainer />} />
+                            <Route path="/categoria/:nombre" element={<ItemListContainer/>} />
+                            <Route path="/cart" element={<Cart/>} />
+                        </Routes>
+                    </main>
+                    <Footer data={footerData} />
+                </BrowserRouter>
+            </CartProvider>
+           
     )
 } 
 

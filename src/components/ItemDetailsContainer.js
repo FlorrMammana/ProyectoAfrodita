@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetails from "./ItemDetails"
+import {CartContext} from "../context/CartContext"
 
 let productos = [
     {   
@@ -93,6 +94,7 @@ const ItemDetailsContainer = () => {
 
     const [added, setAdded] = useState(false)
 
+    const {agregarCarrito} = useContext(CartContext)
     useEffect(() => {
 
      if(id){
@@ -112,7 +114,8 @@ const ItemDetailsContainer = () => {
 }, [id])
 
 const onAdd = (count) =>{
-    setAdded(true)
+    agregarCarrito(producto,count);
+    setAdded(true);
 }
      return (
          <div>
