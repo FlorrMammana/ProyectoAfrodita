@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetails from "./ItemDetails"
-//import {productos} from "./ItemListContainer"
-import Welcome from "./Cart"
 
 let productos = [
     {   
@@ -93,6 +91,8 @@ const ItemDetailsContainer = () => {
 
     let [producto, setProducto] = useState({})
 
+    const [added, setAdded] = useState(false)
+
     useEffect(() => {
 
      if(id){
@@ -111,10 +111,12 @@ const ItemDetailsContainer = () => {
 
 }, [id])
 
+const onAdd = (count) =>{
+    setAdded(true)
+}
      return (
          <div>
-             <ItemDetails producto={producto} />
-             <Welcome/>
+             <ItemDetails onAdd={onAdd} producto={producto} added={added}/>
          </div>
      )
 }
