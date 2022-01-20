@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 
 const CartItem = ({ product, borrarItem, borrarDeUno }) => {
     return (
-        <Card body>
+        <Card body className="espaciado">
           <Container>
             <Row>
               <Col className="fw-bold"> 
@@ -24,6 +24,7 @@ const CartItem = ({ product, borrarItem, borrarDeUno }) => {
             </Row>
             <Row>
               <Col>
+              {product.item.nombre}
               </Col>
               <Col>
                 {product.count}

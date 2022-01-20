@@ -1,12 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
 }
 
-#root {
-    display: flex;
-    flex-direction: column;
-}
+
 
 img{
     width: 70%;
@@ -15,12 +13,7 @@ img{
 .logo{
     width:30%;
 }
-#root > header {
-    display: flex;
-    align-items: center;
-    background-color: bisque;
-    //box-shadow: 0 1px 6px rgba(0,0,0,0.3);
-}
+
 
 h1, p, h5{
     font-family: 'Courier New', Courier, monospace;
@@ -52,4 +45,7 @@ li a , .carro{
     color:black;
     font-family: 'Courier New', Courier, monospace;
 
+}
+.espaciado{
+    padding:50px;
 }

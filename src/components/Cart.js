@@ -8,15 +8,16 @@ const Cart = () =>{
     const {cartArray, borrarItem} = useContext(CartContext);
 
     return (
-        <div>
+        <div >
           {cartArray.length === 0 &&
-            <div>
+            <div className="espaciado">
               <p>Carrito vacio. Comienza tu compra.</p>
               <Link to='/'>Ir al inicio</Link>
             </div>
           }
-          {(cartArray.length > 0) && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} />) && 
-          <div className="text-center">Precio Final: $</div>}
+          {(cartArray.length > 0) && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} />)
+          //<div className="text-center">Precio Final: $</div>
+          }
         </div>
       )
 }
