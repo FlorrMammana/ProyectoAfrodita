@@ -27,12 +27,16 @@ const borrarTodo = () =>{
 const IsInCart = (id) =>{
     return cartArray.some(element => element.item.id === id);
 }
+  const productCounter = () => {
+    return cartArray.reduce((accum, item) => accum = accum + item.count, 0)
+  }
 const value = {
 cartArray,
 agregarCarrito,
 borrarItem,
 borrarTodo,
-IsInCart
+IsInCart,
+productCounter
 //borrarDeUno
 }
     return (

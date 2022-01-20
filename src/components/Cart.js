@@ -15,8 +15,10 @@ const Cart = () =>{
               <Link to='/'>Ir al inicio</Link>
             </div>
           }
-          {(cartArray.length > 0) && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} />)}
+          {(cartArray.length > 0) && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} />) && 
+          <div className="text-center">Precio Final: $</div>}
         </div>
       )
 }
 export default Cart
+

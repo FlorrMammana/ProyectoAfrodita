@@ -1,30 +1,29 @@
 import React from 'react'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 
 const CartItem = ({ product, borrarItem, borrarDeUno }) => {
     return (
         <Card body>
           <Container>
             <Row>
-              <Col> 
+              <Col className="fw-bold"> 
                 Productos
               </Col>
-              <Col>
+              <Col  className="fw-bold">
                 Unidades
               </Col>
-              <Col>
+              <Col  className="fw-bold">
                 Precio por unidad
               </Col>
-              <Col>
+              <Col  className="fw-bold">
                 Precio Total
               </Col>
-              <Col>
+              <Col  className="fw-bold">
                 Borrar Todo
               </Col>
             </Row>
             <Row>
               <Col>
-                {product.item.nombre}
               </Col>
               <Col>
                 {product.count}
@@ -33,12 +32,13 @@ const CartItem = ({ product, borrarItem, borrarDeUno }) => {
                 ${product.item.precio }
               </Col>
               <Col>
-                ${product.item.precio * product.count}
+               ${product.item.precio * product.count}
               </Col>
               <Col>
-              <Button variant='danger' onClick={() => borrarItem(product.item.id)}>Borrar Producto</Button>
+              <Button variant='danger' onClick={() => borrarItem(product.item.id)}>Borrar</Button>
               </Col>
             </Row>
+            
           </Container>
         </Card>
       )
