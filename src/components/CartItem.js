@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 
-const CartItem = ({ product, borrarItem, borrarDeUno }) => {
+const CartItem = ({ product, borrarItem, aumentarContador}) => {
+
+
     return (
         <Card body className="espaciado">
           <Container>
@@ -27,7 +29,17 @@ const CartItem = ({ product, borrarItem, borrarDeUno }) => {
               {product.item.nombre}
               </Col>
               <Col>
+              <Button variant="secondary" size="sm" onClick={() =>aumentarContador(product.item.count)}>
+                -
+              </Button>
+              </Col>
+              <Col>
                 {product.count}
+              </Col>
+              <Col>
+              <Button variant="secondary" size="sm">
+                +
+              </Button>
               </Col>
               <Col>
                 ${product.item.precio }
