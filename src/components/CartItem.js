@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 
-const CartItem = ({ product, borrarItem, aumentarContador}) => {
+const CartItem = ({ product, borrarItem, borrarTodo}) => {
 
 
     return (
@@ -50,6 +50,14 @@ const CartItem = ({ product, borrarItem, aumentarContador}) => {
               <Col>
               <Button variant='danger' onClick={() => borrarItem(product.item.id)}>Borrar</Button>
               </Col>
+              <Col>
+              <Button variant='primary' onClick={borrarTodo(product)}>Borrar Todo</Button>
+              </Col>
+            </Row>
+            <Row>
+            <Col>
+              precio final: 
+            </Col>
             </Row>
             
           </Container>
@@ -59,3 +67,7 @@ const CartItem = ({ product, borrarItem, aumentarContador}) => {
 
 export default CartItem
 //onClick={() =>aumentarContador(product.item.count)}
+
+/*
+
+*/

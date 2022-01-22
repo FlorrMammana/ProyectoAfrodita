@@ -39,6 +39,7 @@ const borrarItem = (id) =>{
     setCartArray(borrarUno)
 }
 const borrarTodo = () =>{
+    console.log(borrarTodo)
     setCartArray([]);
 }
 const isInCart = (id) =>{
@@ -47,20 +48,30 @@ const isInCart = (id) =>{
   const productCounter = () => {
     return cartArray.reduce((accum, item) => accum = accum + item.count, 0)
   }
-   /* const calculoTotal = () => {
+  const total = () => {
+    return cartArray.reduce((accum, producto) => accum = accum + (producto.item.price * producto.cantidad), 0)
+}
+/* const calculoTotal = () => {
         return (
             cartArray
             .map(item => item.precioTotal) // obtenemos solo los precios de los items
             .reduce((a, b) => a + b) // procedemos con la suma
           )
-      }*/
+      }
+      */
+     const calculo = (precio, count) =>{
+        let calcular = (precio * count)
+        setCartArray(calcular)
+     }
 const value = {
 cartArray,
 agregarCarrito,
 borrarItem,
 borrarTodo,
 isInCart,
-productCounter
+productCounter,
+total,
+calculo
 //aumentarContador    
 //calculoTotal
 //borrarDeUno
