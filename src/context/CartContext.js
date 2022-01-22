@@ -7,21 +7,28 @@ const CartProvider = ({children}) => {
 const [cartArray, setCartArray] = useState([])
 
 const agregarCarrito = (producto, count) =>{
-    console.log(`Agregaste ${producto.nombre}, ${count}`)
-    const nuevo = {
+    if (isInCart(producto.id)) {
+        console.log(`Agregaste el mismo producto al carrito, cantidad: ${count}.`);
+        const actualizar = cartArray.findIndex(elemento => elemento.item.id === producto.id)
+        cartArray[actualizar].count = cartArray[actualizar].count + count
+        setCartArray([...cartArray])
+    } else {
+        console.log(`Agregaste ${producto.nombre}, ${count}`)
+        const nuevo = {
         item:producto,
         count
 }
     setCartArray([...cartArray, nuevo])
+    }
 }
 /*const borrarDeUno = (count) =>{
     const uno = (count - 1);
     setCartArray(uno)
 }*/
 
-const aumentarContador = (count) => {
-    return setCartArray.reduce(element => element.item.count + 1)        
-  }
+/*    function aumentarContador(count) {
+        return cartArray.reduce((aacum, elemento) => aacum = aacum + elemento.item.count + 1);
+    }*/
 /*
 const disminuirContador = () => {
           return setCartArray(element => element.item.count - 1)        
@@ -34,7 +41,7 @@ const borrarItem = (id) =>{
 const borrarTodo = () =>{
     setCartArray([]);
 }
-const IsInCart = (id) =>{
+const isInCart = (id) =>{
     return cartArray.some(element => element.item.id === id);
 }
   const productCounter = () => {
@@ -52,9 +59,9 @@ cartArray,
 agregarCarrito,
 borrarItem,
 borrarTodo,
-IsInCart,
-productCounter,
-aumentarContador
+isInCart,
+productCounter
+//aumentarContador    
 //calculoTotal
 //borrarDeUno
 }

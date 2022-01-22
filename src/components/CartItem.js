@@ -29,7 +29,7 @@ const CartItem = ({ product, borrarItem, aumentarContador}) => {
               {product.item.nombre}
               </Col>
               <Col>
-              <Button variant="secondary" size="sm" onClick={() =>aumentarContador(product.item.count)}>
+              <Button variant="secondary" size="sm" >
                 -
               </Button>
               </Col>
@@ -58,3 +58,4 @@ const CartItem = ({ product, borrarItem, aumentarContador}) => {
 }
 
 export default CartItem
+//onClick={() =>aumentarContador(product.item.count)}
