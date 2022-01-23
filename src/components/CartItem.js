@@ -51,7 +51,7 @@ const CartItem = ({ product, borrarItem, borrarTodo}) => {
               <Button variant='danger' onClick={() => borrarItem(product.item.id)}>Borrar</Button>
               </Col>
               <Col>
-              <Button variant='primary' onClick={borrarTodo(product)}>Borrar Todo</Button>
+              <Button variant='primary' onClick={() => borrarTodo()}>Borrar Todo</Button>
               </Col>
             </Row>
             <Row>
