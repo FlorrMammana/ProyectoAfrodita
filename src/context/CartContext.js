@@ -39,7 +39,6 @@ const borrarItem = (id) =>{
     setCartArray(borrarUno)
 }
 const borrarTodo = () =>{
-    console.log(borrarTodo)
     setCartArray([]);
 }
 const isInCart = (id) =>{
