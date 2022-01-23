@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Cart = () =>{ 
 
-    const {cartArray, borrarItem} = useContext(CartContext);
+    const {cartArray, borrarItem, borrarTodo, total} = useContext(CartContext);
 
     return (
         <div >
@@ -15,9 +15,14 @@ const Cart = () =>{
               <Link to='/'>Ir al inicio</Link>
             </div>
           }
-          {(cartArray.length > 0) && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} />)
-          //<div className="text-center">Precio Final: $</div>
-          }
+          {(cartArray.length > 0 && 
+          cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} borrarTodo={borrarTodo} total={total}/>) &&
+          <>
+          <div className="text-center">Precio Final: $</div>
+          <button type="button" className="btn btn-dark">Terminar Compra</button>
+          </>
+        
+          )}
         </div>
       )
 }

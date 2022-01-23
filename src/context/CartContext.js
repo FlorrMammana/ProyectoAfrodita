@@ -49,7 +49,7 @@ const isInCart = (id) =>{
     return cartArray.reduce((accum, item) => accum = accum + item.count, 0)
   }
   const total = () => {
-    return cartArray.reduce((accum, producto) => accum = accum + (producto.item.price * producto.cantidad), 0)
+    return cartArray.reduce((accum, producto) => accum = accum + (producto.item.precio * producto.cantidad), 0)
 }
 /* const calculoTotal = () => {
         return (
@@ -59,7 +59,7 @@ const isInCart = (id) =>{
           )
       }
       */
-     const calculo = (precio, count) =>{
+      const calculo = (precio, count) =>{
         let calcular = (precio * count)
         setCartArray(calcular)
      }
