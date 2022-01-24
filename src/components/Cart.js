@@ -21,16 +21,30 @@ const Cart = () =>{
         }
         return(
           <div>
-            {cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem}/>)}
+            <table className='table'>
+              <thead>
+              <tr>
+                <th scope='col'>Productos</th>
+                <th scope='col'>Unidades</th>
+                <th scope='col'>Precio por Unidad</th>
+                <th scope='col'>Precio Total</th>
+                <th scope='col'>Borrar</th>
+              </tr>
+              </thead>
+              <tbody>
+                {cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem}/>)}
+              </tbody>
+            </table>
             <div>
             <div className="text-center">Precio Final: $ {total}</div>
             <button type="button" className="btn btn-dark">Terminar Compra</button>
-            <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Vaciar Carrito</button>
+            <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Vaciar carrito</button>
+
             </div>
           </div>
-
         )
     } 
 }
+       
        
 export default Cart

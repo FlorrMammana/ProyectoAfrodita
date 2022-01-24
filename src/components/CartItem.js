@@ -1,71 +1,43 @@
 import React from 'react'
-import { Button, Card, Col, Container, Row} from 'react-bootstrap';
+import { Button, Col, Row} from 'react-bootstrap';
+import { AiFillDelete } from 'react-icons/ai'
 
 const CartItem = ({ product, borrarItem}) => {
 
 
     return (
-        <Card body className="espaciado">
-          <Container>
+        <tr>
+          <td>
+            {product.item.nombre}
+          </td>
+          <td>
             <Row>
-              <Col className="fw-bold"> 
-                Productos
-              </Col>
-              <Col  className="fw-bold">
-                Unidades
-              </Col>
-              <Col  className="fw-bold">
-                Precio por unidad
-              </Col>
-              <Col  className="fw-bold">
-                Precio Total
-              </Col>
-              <Col  className="fw-bold">
-                Borrar Todo
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-              {product.item.nombre}
-              </Col>
-              <Col>
+            <Col>
               <Button variant="secondary" size="sm" >
                 -
               </Button>
-              </Col>
-              <Col>
-                {product.count}
-              </Col>
-              <Col>
+            </Col>
+            <Col>
+              {product.count}
+            </Col>
+            <Col>
               <Button variant="secondary" size="sm">
                 +
               </Button>
-              </Col>
-              <Col>
-                ${product.item.precio }
-              </Col>
-              <Col>
-               ${product.item.precio * product.count}
-              </Col>
-              <Col>
-              <Button variant='danger' onClick={() => borrarItem(product.item.id)}>Borrar</Button>
-              </Col>
-              <Col>
-              </Col>
-            </Row>
-            <Row>
-            <Col>
             </Col>
             </Row>
-            
-          </Container>
-        </Card>
+          </td>
+          <td>
+            ${product.item.precio }
+          </td>
+          <td>
+            ${product.item.precio * product.count}
+          </td>
+          <td>
+          <Button variant='danger' onClick={() => borrarItem(product.item.id)}><AiFillDelete style={{height: '50px'}}/></Button>
+          </td>
+        </tr>
       )
 }
 
 export default CartItem
-//onClick={() =>aumentarContador(product.item.count)}
-
-/*
-
-*/
