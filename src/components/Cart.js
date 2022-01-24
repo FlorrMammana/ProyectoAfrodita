@@ -14,20 +14,33 @@ const Cart = () =>{
           <Link to='/'>Ir al inicio</Link>
         </div>
             )
+      }else if(cartArray.length === 1){
+        return(
+          <div>
+            {cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem}/>)}
+            <div>
+            <div className="text-center">Precio Final: $ {cartArray[0]["item"]["precio"] * cartArray[0]["count"]}</div>
+            <button type="button" className="btn btn-dark">Terminar Compra</button>
+            <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Terminar Compra</button>
+
+            </div>
+          </div>
+        )
+      
     }else{
       console.log(cartArray)
       return(
         <div>
-          {cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} borrarTodo={borrarTodo}/>)}
+          {cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem}/>)}
           <div>
-          <div className="text-center">Precio Final: $</div>
+          <div className="text-center">Precio Final: $ {cartArray.reduce(function (prev,post){ return (prev.item.precio * prev.count) + (post.item.precio * post.count)})}</div>
           <button type="button" className="btn btn-dark">Terminar Compra</button>
+          <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Terminar Compra</button>
           </div>
         </div>
       )
-    }
-
+    }  
+}
        
 export default Cart
 
-//{cartArray.reduce((product) => (product.item.precio * product.count), 0)}

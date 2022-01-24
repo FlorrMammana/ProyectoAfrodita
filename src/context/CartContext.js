@@ -48,9 +48,7 @@ const isInCart = (id) =>{
   const productCounter = () => {
     return cartArray.reduce((accum, item) => accum = accum + item.count, 0)
   }
-  const total = () => {
-    return cartArray.reduce((accum, producto) => accum = accum + (producto.item.precio * producto.cantidad), 0)
-}
+ 
 /* const calculoTotal = () => {
         return (
             cartArray
@@ -70,7 +68,6 @@ borrarItem,
 borrarTodo,
 isInCart,
 productCounter,
-total,
 calculo
 //aumentarContador    
 //calculoTotal

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 
-const CartItem = ({ product, borrarItem, borrarTodo}) => {
+const CartItem = ({ product, borrarItem}) => {
 
 
     return (
@@ -51,7 +51,6 @@ const CartItem = ({ product, borrarItem, borrarTodo}) => {
               <Button variant='danger' onClick={() => borrarItem(product.item.id)}>Borrar</Button>
               </Col>
               <Col>
-              <Button variant='primary' onClick={() => borrarTodo()}>Borrar Todo</Button>
               </Col>
             </Row>
             <Row>
