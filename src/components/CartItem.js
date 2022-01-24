@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 
-const CartItem = ({ product, borrarItem, borrarTodo, total}) => {
+const CartItem = ({ product, borrarItem, borrarTodo}) => {
 
 
     return (
@@ -56,7 +56,6 @@ const CartItem = ({ product, borrarItem, borrarTodo, total}) => {
             </Row>
             <Row>
             <Col>
-              precio final: {total()}
             </Col>
             </Row>
             

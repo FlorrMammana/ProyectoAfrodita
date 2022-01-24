@@ -5,26 +5,29 @@ import { Link } from 'react-router-dom'
 
 const Cart = () =>{ 
 
-    const {cartArray, borrarItem, borrarTodo, total} = useContext(CartContext);
+    const {cartArray, borrarItem, borrarTodo} = useContext(CartContext);
 
-    return (
-        <div >
-          {cartArray.length === 0 &&
-            <div className="espaciado">
-              <p>Carrito vacio. Comienza tu compra.</p>
-              <Link to='/'>Ir al inicio</Link>
-            </div>
-          }
-          {(cartArray.length > 0 && 
-          cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} borrarTodo={borrarTodo} total={total}/>) &&
-          <>
+    if(cartArray.length === 0){
+      return(
+        <div className="espaciado">
+          <p>Carrito vacio. Comienza tu compra.</p>
+          <Link to='/'>Ir al inicio</Link>
+        </div>
+            )
+    }else{
+      console.log(cartArray)
+      return(
+        <div>
+          {cartArray.map(prod => <CartItem key={prod.item.id} product={prod} borrarItem={borrarItem} borrarTodo={borrarTodo}/>)}
+          <div>
           <div className="text-center">Precio Final: $</div>
           <button type="button" className="btn btn-dark">Terminar Compra</button>
-          </>
-        
-          )}
+          </div>
         </div>
       )
-}
+    }
+
+       
 export default Cart
 
+//{cartArray.reduce((product) => (product.item.precio * product.count), 0)}
