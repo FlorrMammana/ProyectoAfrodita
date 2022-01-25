@@ -1,8 +1,8 @@
 import Count from "./Count"
 import { Link } from "react-router-dom"
 
-const ItemDetails = ({producto, onAdd, added}) =>{       
-            return(
+const ItemDetails = ({producto, onAdd, added}) =>{ 
+return(
                    <div className="card ">
                    <img src={producto.img} alt="imagen ilustrativa" className="text-center centro"/>
                         <div className="card-body text-center">
