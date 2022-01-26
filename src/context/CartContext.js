@@ -8,7 +8,6 @@ const [cartArray, setCartArray] = useState([])
 
 const agregarCarrito = (producto, count) =>{
     if (isInCart(producto.id)) {
-        console.log(`Agregaste el mismo producto al carrito, cantidad: ${count}.`);
         const actualizar = cartArray.findIndex(elemento => elemento.item.id === producto.id)
         cartArray[actualizar].count = cartArray[actualizar].count + count
         setCartArray([...cartArray])
