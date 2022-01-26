@@ -1,24 +1,35 @@
+
+
+
 import { Link } from "react-router-dom"
-import { Navbar, Nav, Container } from 'react-bootstrap';
 import CartView from "./CartView"
 
 const NavBar = () => (
     <>
-    <Navbar bg="dark" variant="dark" fixed="top">
-    <Container>
-    <Link to="/">
+   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div className="container-fluid">
+  <Link to="/">
         <img src="/afroditaSinFondo.png" alt="logo" className="logo"/>
         </Link>
-    <Nav className="me-auto">
-    <Nav.Link to="/categoria/lashes">Lashista</Nav.Link>
-    <Nav.Link to="/categoria/manos">Manicuria</Nav.Link>
-    <Nav.Link to="/categoria/combos">Promociones</Nav.Link>
-    <Link to='./Cart'>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link " aria-current="page" to="/categoria/lashes">Lashes</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link"  to="/manos">Manicuria</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/categoria/combos">Promociones</Link>
+        </li>
+        <Link to='./Cart'>
                 <CartView />
             </Link>
-    </Nav>
-    </Container>
-    </Navbar>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     </>
     )
 
