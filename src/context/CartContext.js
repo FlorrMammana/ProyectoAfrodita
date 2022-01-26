@@ -48,19 +48,11 @@ const isInCart = (id) =>{
   const productCounter = () => {
     return cartArray.reduce((accum, item) => accum = accum + item.count, 0)
   }
- 
-/* const calculoTotal = () => {
-        return (
-            cartArray
-            .map(item => item.precioTotal) // obtenemos solo los precios de los items
-            .reduce((a, b) => a + b) // procedemos con la suma
-          )
-      }
-      */
-      const calculo = (precio, count) =>{
-        let calcular = (precio * count)
-        setCartArray(calcular)
-     }
+
+const calculo = (precio, count) =>{
+let calcular = (precio * count)
+setCartArray(calcular)
+}
 const value = {
 cartArray,
 agregarCarrito,
@@ -69,9 +61,6 @@ borrarTodo,
 isInCart,
 productCounter,
 calculo
-//aumentarContador    
-//calculoTotal
-//borrarDeUno
 }
     return (
         <CartContext.Provider value={value}>
