@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 const CartProvider = ({children}) => {
 
-const [cartArray, setCartArray] = useState([])
+const [cartArray, setCartArray] = useState([]);
 
 const agregarCarrito = (producto, count) =>{
     if (isInCart(producto.id)) {
