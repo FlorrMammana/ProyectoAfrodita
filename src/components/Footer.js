@@ -1,8 +1,10 @@
 
 const Footer = ({data : {copy, author}}) => {
     return(
-        <footer>
-            <p className="text-center">{copy} - {author}</p>
+        <footer>                        
+            <li className="text-center">Florencia Agustina Mammana</li>
+            <li className="text-center">Rosario, Santa Fe</li>          
+
         </footer>
     )
 }

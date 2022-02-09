@@ -13,17 +13,7 @@ const CartItem = ({ product, borrarItem}) => {
           <td>
             <Row>
             <Col>
-              <Button variant="secondary" size="sm" >
-                -
-              </Button>
-            </Col>
-            <Col>
               {product.count}
-            </Col>
-            <Col>
-              <Button variant="secondary" size="sm">
-                +
-              </Button>
             </Col>
             </Row>
           </td>

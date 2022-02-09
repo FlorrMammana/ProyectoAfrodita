@@ -41,8 +41,9 @@ const Cart = () =>{
 
     if(cartArray.length === 0){
       return(
-        <div className="espaciado">
-          <p>Carrito vacio. Comienza tu compra.</p>
+        <div className="carritoVacio">
+          <img src="/assets/hombre.jpg" className='hombre' />
+          <p className="text-center">¡Ops, parece que todavia no agregaste productos a tu carrito!Cambiemos eso...</p>
           <Link to='/'>Ir al inicio</Link>
         </div>
             )
@@ -69,10 +70,8 @@ const Cart = () =>{
             </table>
             <div>
             <div className="text-center">Precio Final: $ {total}</div>
-
-            <button className='d-flex justify-content-center finalizar-compra w-10 mx-auto' onClick={crearOrden}>Terminar Compra</button>
+            <button type="button" className="btn btn-dark" onClick={crearOrden}>Terminar Compra</button>
             <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Vaciar carrito</button>
-
             </div>
           </div>
         )
