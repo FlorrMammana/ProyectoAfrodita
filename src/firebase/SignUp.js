@@ -17,11 +17,11 @@ export const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleEmail = e => setEmail(e.target.value);
-  const handlePassword = e => setPassword(e.target.value);
-  const handleConfirmPassword = e => setConfirmPassword(e.target.value);
+  const cargaEmail = e => setEmail(e.target.value);
+  const cargaPassword = e => setPassword(e.target.value);
+  const confirmarPassword = e => setConfirmPassword(e.target.value);
 
-  const handleSubmit = async (e) => {
+  const cargar = async (e) => {
     e.preventDefault();
     setLoading(true);
     if (password !== confirmPassword) {
@@ -29,7 +29,7 @@ export const SignUp = () => {
       setTimeout(() => setError(''), 1500);
     } else {
       try {
-        await signup(email, password);
+        await signUp(email, password);
         history.push('/');
       } catch (error) {
         setError('Wrong Credentials');
@@ -46,10 +46,10 @@ export const SignUp = () => {
         <h1>Sign Up</h1>
       </div>
       <div className='card-body'>
-        <form onSubmit={handleSubmit} >
-          <input type='email' placeholder='Email' onChange={handleEmail} />
-          <input type='password' placeholder='Password' onChange={handlePassword} />
-          <input type='password' placeholder='Confirm Password' onChange={handleConfirmPassword} />
+        <form onSubmit={cargar} >
+          <input type='email' placeholder='Email' onChange={cargaEmail} />
+          <input type='password' placeholder='Password' onChange={cargaPassword} />
+          <input type='password' placeholder='Confirm Password' onChange={confirmarPassword} />
           <input type='submit' value='Sign Up' />
         </form>
         {loading && <img src={Spinner} alt='Loading' />}
