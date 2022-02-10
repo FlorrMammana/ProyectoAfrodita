@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetails from "./ItemDetails"
-import {CartContext} from "../context/CartContext"
-import {coleccion} from "../firebase/Firebase"
+import { CartContext } from '../../context/CartContext';
+import { coleccion } from '../../firebase/Firebase';
 import { getDoc, doc} from "firebase/firestore"
 
 const ItemDetailsContainer = () => {

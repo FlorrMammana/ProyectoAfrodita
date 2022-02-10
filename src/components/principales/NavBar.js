@@ -1,8 +1,5 @@
-
-
-
 import { Link } from "react-router-dom"
-import CartView from "./CartView"
+import CartView from "../carts/CartView"
 
 const NavBar = () => (
     <>

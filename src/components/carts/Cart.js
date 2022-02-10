@@ -1,10 +1,9 @@
 import React, {useContext, useState} from 'react'
-import {CartContext} from '../context/CartContext'
+import { CartContext } from '../../context/CartContext';
 import CartItem from "./CartItem"
 import { Link } from 'react-router-dom'
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import {db} from "../firebase/Firebase";
-
+import { db } from '../../firebase/Firebase';
 
 const Cart = () =>{ 
 

@@ -1,18 +1,11 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { auth } from '../firebase/Firebase';
+import React, { createContext, useState } from 'react';
 
 export const CartContext = createContext();
 
 const CartProvider = ({children}) => {
 
 const [cartArray, setCartArray] = useState([]);
-const [usuario, setUsuario] = useState({});
 
-useEffect(() =>{
-    auth.onAuthStateChanged((usuario) =>{
-        setUsuario(usuario)
-    })
-}, []); 
 
 
 const agregarCarrito = (producto, count) =>{
@@ -30,13 +23,6 @@ const agregarCarrito = (producto, count) =>{
     }
 }
 
-const signUp = (email,password) =>{
-    return auth.createUserWithEmailAndPassword(email, password);
-}
-const login = (email, password) =>{
-    return auth.signInWithEmailAndPassword(email, password);
-}
-const logout = () => auth.logout();
 const borrarItem = (id) =>{
     const borrarUno = cartArray.filter(element => element.item.id !== id );
     setCartArray(borrarUno)
@@ -63,11 +49,7 @@ borrarItem,
 borrarTodo,
 isInCart,
 productCounter,
-calculo,
-logout,
-login,
-signUp,
-usuario
+calculo
 }
     return (
         <CartContext.Provider value={value}>

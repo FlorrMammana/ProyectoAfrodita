@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import ItemList from "./ItemList"
 import { getDocs} from "firebase/firestore"
-import {coleccion }from "../firebase/Firebase"
+import { coleccion } from '../../firebase/Firebase';
 const ItemListContainer = () => {
 
     let [lista, setLista] = useState([])
