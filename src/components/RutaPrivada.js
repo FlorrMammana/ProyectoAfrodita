@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React, {useContext} from 'react';
+import { Route, Navigate } from 'react-router-dom';
 import {CartContext} from '../context/CartContext'
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -10,10 +10,10 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={props => {
-        return usuario ? <Component {...props} /> : <Redirect to='/login' />
+        return usuario ? <Component {...props} /> : <Navigate to='/login' />
       }}
     >
-
     </Route>
   )
 }
+export default PrivateRoute;
