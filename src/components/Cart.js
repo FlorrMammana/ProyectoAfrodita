@@ -69,7 +69,7 @@ const Cart = () =>{
               </tbody>
             </table>
             <div>
-            <div className="text-center">Precio Final: $ {total}</div>
+            <div className="text-center">Precio Final: $ {cartArray.reduce((prev, curr) => prev.item.precio * prev.count + curr.item.precio * curr.count)}</div>
             <button type="button" className="btn btn-dark" onClick={crearOrden}>Terminar Compra</button>
             <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Vaciar carrito</button>
             </div>

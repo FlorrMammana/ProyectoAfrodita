@@ -1,5 +1,5 @@
 
-const Footer = ({data : {copy, author}}) => {
+const Footer = () => {
     return(
         <footer>                        
             <li className="text-center">Florencia Agustina Mammana</li>

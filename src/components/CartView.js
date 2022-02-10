@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { Badge } from 'react-bootstrap';
 import { BsCartCheckFill } from 'react-icons/bs'
