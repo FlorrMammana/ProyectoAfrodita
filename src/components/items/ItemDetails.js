@@ -3,8 +3,15 @@ import { Link } from "react-router-dom"
 
 const ItemDetails = ({producto, onAdd, added}) =>{ 
 return(
-                   <div className="card ">
-                   <img src={producto.img} alt="imagen ilustrativa" className="text-center centro"/>
+                   <div className="card">
+                       <div className="container">
+                           <div className="row">
+                           <img src={producto.img} alt="imagen ilustrativa" className="text-center col-4 imagenDetalle"/>
+                            <img src={producto.img1} alt="imagen ilustrativa" className="text-center col-4 imagenDetalle"/>
+                            <img src={producto.img2} alt="imagen ilustrativa" className="text-center col-4 imagenDetalle"/>
+                           </div>
+                           
+                       </div>                  
                         <div className="card-body text-center">
                             <h5 className="card-title text-center">{producto.nombre}</h5>
                             <p className="card-text">{producto.detalle}</p>
