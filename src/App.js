@@ -6,13 +6,11 @@ import ItemDetailContainer from "./components/items/ItemDetailsContainer"
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Cart from './components/carts/Cart'
-import CartProvider from './context/CartContext'
-
+import CartProvider from "./context/CartContext"
 function App() {
-
         return (
             <CartProvider>
-            <BrowserRouter>
+                <BrowserRouter>
                 <Header/>
                 <main>
                     <Routes>
@@ -25,8 +23,7 @@ function App() {
                 </main>
                 <Footer />
             </BrowserRouter>
-        </CartProvider>
-           
+        </CartProvider>        
     )
 } 
 

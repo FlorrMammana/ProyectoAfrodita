@@ -1,43 +1,14 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartContext';
 import CartItem from "./CartItem"
 import { Link } from 'react-router-dom'
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from '../../firebase/Firebase';
+import Example from '../items/Modal';
 
 const Cart = () =>{ 
 
     const {cartArray, borrarItem, borrarTodo} = useContext(CartContext);
 
-    const [orden, setOrden] = useState(false)
     
-    const crearOrden = () => {
-
-        const coleccionProductos = collection(db,"ordenes")
-        const usuario = {
-            nombre: "Usuario",
-            email: "mail@gmail.com"
-        }
-
-        const orden = {
-            usuario,
-            cartArray,
-            fechaPedido: serverTimestamp()
-        }
-
-        const pedido = addDoc(coleccionProductos,orden)
-
-        pedido
-        .then((resultado)=>{
-            setOrden(resultado.id)
-            console.log("generado correctamente" + resultado.id )
-            borrarTodo()
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    }
-
     if(cartArray.length === 0){
       return(
         <div className="carritoVacio">
@@ -68,14 +39,18 @@ const Cart = () =>{
               </tbody>
             </table>
             <div>
-            <div className="text-center">Precio Final: $ {cartArray.reduce((prev, curr) => prev.item.precio * prev.count + curr.item.precio * curr.count)}</div>
-            <button type="button" className="btn btn-dark" onClick={crearOrden}>Terminar Compra</button>
+            <div className="text-center">Precio Final: $ {total}</div>
+            <Example />
             <button type="button" className="btn btn-primary" onClick={() => borrarTodo()}>Vaciar carrito</button>
             </div>
           </div>
         )
     } 
 }
-       
+/**
+ * 
+ *             <button type="button" className="btn btn-dark" onClick={crearOrden}>Terminar Compra</button>
+
+ *  */    
        
 export default Cart

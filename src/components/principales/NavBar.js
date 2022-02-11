@@ -19,9 +19,10 @@ const NavBar = () => (
         <li className="nav-item">
           <Link className="nav-link" to="/categoria/combos">Promociones</Link>
         </li>
+        
         <Link to='./Cart'>
                 <CartView />
-            </Link>
+        </Link>
       </ul>
     </div>
   </div>

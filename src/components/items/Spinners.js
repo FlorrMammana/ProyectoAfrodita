@@ -2,8 +2,9 @@ import { Spinner } from 'react-bootstrap';
 
 const Spinners = () => {
   return (
-    <div>
-        <Spinner animation="grow" />
+    <div className='d-flex justify-content-center'>
+        <Spinner animation="grow" size="sm" />
+        <Spinner animation="grow" size="sm" />
         <Spinner animation="grow" size="sm" />
     </div>
   )
