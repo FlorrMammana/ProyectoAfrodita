@@ -13,11 +13,11 @@ return(
                            
                        </div>                  
                         <div className="card-body text-center">
-                            <h5 className="card-title text-center">{producto.nombre}</h5>
-                            <p className="card-text">{producto.detalle}</p>
+                            <h5 className="card-title text-center tituloDetalle">{producto.nombre}</h5>
+                            <p className="card-text justify-content-between descripcionDetalle">{producto.detalle}</p>
                         </div>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item text-center"><strong>$</strong>{producto.precio}</li>
+                            <li className="list-group-item text-center precioDetalle">${producto.precio}</li>
                             {added ? <Link to='/cart'>Ir al carrito</Link> : <Count stock={producto.stock} initial={1} onAdd={onAdd} />}
                         </ul>
                     </div>
