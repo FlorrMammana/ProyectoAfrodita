@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +23,9 @@ img{
     width:30%;
 }
 
-
+.espaciado{
+    padding: 40px;
+}
 h1, p, h5{
     font-family: 'Courier New', Courier, monospace;
 }
@@ -45,9 +51,13 @@ h1, p, h5{
     }
     :link{
         text-decoration: none;
-        color:white !important;
+        color:white;
         font-family: 'Source Serif 4', sans-serif;
         }
+}
+.precioFinal{
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
 }
 .tituloDetalle{
     font-family: 'Cinzel', serif;
@@ -55,7 +65,7 @@ h1, p, h5{
 }
 .seleccionado{
     font-family: 'Cinzel', serif;
-    font-size: 1em;
+    font-size: 2em;
 }
 .descripcionDetalle{
     font-family: 'PT Serif', serif;
@@ -72,7 +82,8 @@ h1, p, h5{
 li a , .carro{
     text-decoration:none;
     color:black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Mea Culpa', cursive;
+    font-size: 2em;
 }
 .carritoVacio {
     text-align: center;
@@ -87,6 +98,19 @@ li a , .carro{
         height: 15%;
     }
 }
+.textCarro{
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.5em;
+}
+.ajusteCard{
+    place-content:unset;
+}
+.carroIcons{
+    height: 60px;
+}
+.goToCart{
+    font-size: 1.8em;
+}
 footer{
     background-color: black;
     color:white;
@@ -95,23 +119,53 @@ footer{
     bottom: 0;
     li{
         list-style-type: none;
-        font-family: 'Source Serif 4', sans-serif;
-    }
+        font-family: 'Source Serif Pro', serif;
+       }
 }
-
+.probar{
+    height: 200px;
+}
 @media (min-width: 320px) and (max-width: 480px){
+    .espaciado{
+        padding-top: 80px;
+    }
+    .logo{
+        width:40%;
+    }
     #item-container{
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
     }
+    .barra{
+        display: flex;
+        flex-direction: row;
+        li{
+            margin: 10px;
+        }
+    }
+   
 }
 @media (min-width: 481px) and (max-width: 768px){
+    .espaciado{
+        padding-top: 80px;
+    }
+    .logo{
+        width:40%;
+    }
     #item-container{
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
     }
+    .barra{
+        display: flex;
+        flex-direction: row;
+    }
+    li{
+        margin: 10px;
+    }
+    
 }

@@ -6,7 +6,7 @@ const CartItem = ({ product, borrarItem}) => {
 
 
     return (
-        <tr>
+        <tr className='espaciado'>
           <td>
             {product.item.nombre}
           </td>

@@ -9,35 +9,26 @@ import Spinners from './Spinners';
 
 const Example = () =>{
     const {cartArray, borrarItem, borrarTodo} = useContext(CartContext);
-  
-
     const [show, setShow] = useState(false);
     const [orden, setOrden] = useState(false)
     const [loading, setLoading] = useState([false]);
-
-
     const handleClose = () => setShow(false);
     const handleShow = () => {
       setShow(true)
       crearOrden();
     }
-    
     const crearOrden = () => {
-
         const coleccionProductos = collection(db,"ordenes")
         const usuario = {
             nombre: "Usuario",
             email: "mail@gmail.com"
         }
-      
         const orden = {
             usuario,
             cartArray,
             fechaPedido: serverTimestamp()
         }
-
         const pedido = addDoc(coleccionProductos,orden)
-
         pedido
         .then((resultado)=>{
           setLoading(false)
@@ -46,20 +37,17 @@ const Example = () =>{
         .catch((error)=>{
             console.log(error)
         })
-    }
-  
+    } 
     return (
       <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="btn btn-outline-dark" onClick={handleShow}>
           Terminar compra
         </Button>
-
-  
         <Modal show={show} onHide={handleClose} animation={false}>
           <Modal.Header closeButton>
             <Modal.Title>Confirmacion de compra</Modal.Title>
           </Modal.Header>
-          {loading ? <Spinners /> : <Modal.Body>Generacion de compra correctamente con el numero de pedido: '{orden.id}' podra acercarse a la sucursal para hacer efectivo su servicios. Muchas Gracias.</Modal.Body>}
+          {loading ? <Spinners /> : <Modal.Body>Generación de compra realizada correctamente. Con el número de pedido: '{orden.id}' podrá acercarse a la sucursal para hacer efectivos sus servicios. Muchas Gracias.</Modal.Body>}
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Cerrar
@@ -68,11 +56,9 @@ const Example = () =>{
             <Button variant="primary" onClick={handleClose}>
               Finalizar Compra
             </Button>
-            </Link>
-            
+            </Link>           
           </Modal.Footer>
-        </Modal>
-      
+        </Modal>      
       </>
     );
   }
