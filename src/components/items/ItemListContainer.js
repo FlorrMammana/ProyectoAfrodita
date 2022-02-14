@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const {nombre} = useParams()
 
     useEffect(() => {
-        //let isMounted = true;
+        let isMounted = true;
         let pedido
         if(nombre){
             const q = query(coleccion, where("categoria", '==', nombre))
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
         .catch((error)=>{
             console.log(error)
         })  
-        //return() => isMounted = false     
+        return() => isMounted = false     
     },[nombre])
     return (
         <div> 

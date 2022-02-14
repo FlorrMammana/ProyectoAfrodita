@@ -5,34 +5,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
 * {
     margin: 0;
     padding: 0;
 }
-
+/********************
+    ESTRUCTURA MAIN
+*********************/
 main {
     flex-grow: 1;
     padding: 1rem;
 }
-img{
-    width: 70%;
-    
-}
-.logo{
-    width:30%;
-}
-
-.espaciado{
-    padding: 40px;
-}
-h1, p, h5{
-    font-family: 'Courier New', Courier, monospace;
-}
+//ALINEACION CARDS
 #item-container{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
 }
+//CARDS
 .producto{
     padding: 1rem;
     max-width: 350px;
@@ -55,36 +44,57 @@ h1, p, h5{
         font-family: 'Source Serif 4', sans-serif;
         }
 }
-.precioFinal{
-    font-family: 'Cinzel', serif;
-    font-size: 2em;
+.ajusteCard{
+    place-content:unset;
 }
+.carroIcons{
+    height: 60px;
+}
+/*******************
+    IMAGENES
+********************/
+img{
+    width: 70%;
+}
+// lLOGO AFRODITA
+.logo{
+    width:30%;
+}
+//ESPACIADOS
+.espaciado{
+    padding: 70px;
+}
+/**********************
+    DETALLES DE ITEMS
+*********************/
+//TITULOS 
 .tituloDetalle{
     font-family: 'Cinzel', serif;
     font-size: 2em;
 }
+//CANTIDAD DE UNIDADES SELECCIONADAS
 .seleccionado{
     font-family: 'Cinzel', serif;
     font-size: 2em;
 }
+//DESCRIPCION
 .descripcionDetalle{
     font-family: 'PT Serif', serif;
 }
+//PRECIO
 .precioDetalle{
     font-family: 'Cinzel', serif;
     font-size: 2em;
 }
-.centro{
-    text-align: center;
-    width: 100%;
-    height:350px;
-}
-li a , .carro{
-    text-decoration:none;
-    color:black;
-    font-family: 'Mea Culpa', cursive;
+/*****************
+    DETALLES CART
+******************/
+//PRECIO FINAL
+.precioFinal{
+    font-family: 'Cinzel', serif;
     font-size: 2em;
 }
+//CART
 .carritoVacio {
     text-align: center;
     font-family: 'Source Serif 4', sans-serif;
@@ -102,15 +112,22 @@ li a , .carro{
     font-family: 'Source Serif Pro', serif;
     font-size: 1.5em;
 }
-.ajusteCard{
-    place-content:unset;
+/**********
+    NAVBAR
+***********/
+li a , .carro{
+    text-decoration:none;
+    color:black;
+    font-family: 'Mea Culpa', cursive;
+    font-size: 2em;
 }
-.carroIcons{
-    height: 60px;
-}
+
 .goToCart{
     font-size: 1.8em;
 }
+/************
+    FOOTER
+*************/    
 footer{
     background-color: black;
     color:white;

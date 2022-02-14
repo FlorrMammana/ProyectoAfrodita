@@ -7,7 +7,6 @@ import Example from '../items/Modal';
 const Cart = () =>{ 
 
     const {cartArray, borrarItem, borrarTodo} = useContext(CartContext);
-
     
     if(cartArray.length === 0){
       return(

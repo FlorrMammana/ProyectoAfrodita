@@ -13,7 +13,6 @@ const agregarCarrito = (producto, count) =>{
         cartArray[actualizar].count = cartArray[actualizar].count + count
         setCartArray([...cartArray])
     } else {
-        console.log(`Agregaste ${producto.nombre}, ${count}`);
         const nuevo = {
         item:producto,
         count
@@ -26,7 +25,6 @@ const borrarItem = (id) =>{
     setCartArray(borrarUno)
 }
 const borrarTodo = () =>{
-    console.log(borrarTodo)
     setCartArray([]);
 }
 

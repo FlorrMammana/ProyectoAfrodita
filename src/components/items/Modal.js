@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal'
-import{Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { useState,useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
@@ -12,7 +12,10 @@ const Example = () =>{
     const [show, setShow] = useState(false);
     const [orden, setOrden] = useState(false)
     const [loading, setLoading] = useState([false]);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+      setShow(false)
+      borrarTodo()
+    }
     const handleShow = () => {
       setShow(true)
       crearOrden();
@@ -61,6 +64,5 @@ const Example = () =>{
         </Modal>      
       </>
     );
-  }
-  
+  }  
 export default Example

@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 
 function Item({ producto}) {
-
     return (
         <div className="producto text-center espaciado alineacion">
             <h3>{producto.nombre}</h3>
