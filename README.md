@@ -11,3 +11,6 @@ Se utiliza como principal lenguaje la libreria React Javascript.
 
 # Autor
 Florencia Agustina Mammana
+
+#Funcionamiento explicado en un video
+https://www.loom.com/share/ce1ccc5b01454e599936ee9d159eceda
