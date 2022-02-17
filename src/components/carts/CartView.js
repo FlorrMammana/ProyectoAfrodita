@@ -8,7 +8,7 @@ const CartView = () => {
 
   return (
     <>
-      <BsCartCheckFill className='carroIcons'/>{productCounter() > 0 && (<Badge bg="secondary">{productCounter()}</Badge>)}
+      <BsCartCheckFill className='carroIcons '/>{productCounter() > 0 && (<Badge bg="secondary">{productCounter()}</Badge>)}
     </>
   )
 }

@@ -19,7 +19,7 @@ const NavBar = () => (
               <Link className="nav-link" to="/categoria/combos">Sale</Link>
             </li>       
         <Link to='./Cart'>
-                <CartView />
+          <CartView />
         </Link>
       </ul>
     </div>

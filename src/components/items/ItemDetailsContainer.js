@@ -7,8 +7,6 @@ import { getDoc, doc} from "firebase/firestore"
 import Spinners from "./Spinners"
 
 const ItemDetailsContainer = () => {
-
-
     const [producto, setProducto] = useState({})
     const [added, setAdded] = useState(false)
     const [loading, setLoading] = useState([false]);

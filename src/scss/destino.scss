@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+/********************
+    ESTRUCTURA MAIN
+*********************/
+main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+//ALINEACION CARDS
+#item-container{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+}
+//CARDS
+.producto{
+    padding: 1rem;
+    max-width: 350px;
+    font-family: 'Cinzel', serif;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    margin: 1rem;
+    width: 100%;
+    h2 {
+        text-overflow: ellipsis;
+        white-space : nowrap;
+        overflow: hidden;
+    }
+    .precio{
+        font-family: 'Cinzel', serif;
+        font-size: 1.5em;
+    }
+    :link{
+        text-decoration: none;
+        color:white;
+        font-family: 'Source Serif 4', sans-serif;
+        }
+}
+.ajusteCard{
+    place-content:unset;
+}
+.carroIcons{
+    height: 60px;
+}
+/*******************
+    IMAGENES
+********************/
+img{
+    width: 70%;
+}
+// lLOGO AFRODITA
+.logo{
+    width:30%;
+}
+//ESPACIADOS
+.espaciado{
+    padding: 70px;
+}
+/**********************
+    DETALLES DE ITEMS
+*********************/
+//TITULOS 
+.tituloDetalle{
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+}
+//CANTIDAD DE UNIDADES SELECCIONADAS
+.seleccionado{
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+}
+//DESCRIPCION
+.descripcionDetalle{
+    font-family: 'PT Serif', serif;
+}
+//PRECIO
+.precioDetalle{
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+}
+/*****************
+    DETALLES CART
+******************/
+//PRECIO FINAL
+.precioFinal{
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+}
+//CART
+.carritoVacio {
+    text-align: center;
+    font-family: 'Source Serif 4', sans-serif;
+    font-size: 2em;
+    :link{
+        text-align: center;
+        font-family: 'Source Serif 4', sans-serif;
+    }
+    .hombre{
+        width: 15%;
+        height: 15%;
+    }
+}
+.textCarro{
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.5em;
+}
+/**********
+    NAVBAR
+***********/
+li a , .carro{
+    text-decoration:none;
+    color:black;
+    font-family: 'Mea Culpa', cursive;
+    font-size: 2em;
+}
+
+.goToCart{
+    font-size: 1.8em;
+}
+/************
+    FOOTER
+*************/    
+footer{
+    background-color: black;
+    color:white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    li{
+        list-style-type: none;
+        font-family: 'Source Serif Pro', serif;
+       }
+}
+.probar{
+    height: 200px;
+}
+@media (min-width: 320px) and (max-width: 480px){
+    .espaciado{
+        padding-top: 80px;
+    }
+    .logo{
+        width:40%;
+    }
+    #item-container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    }
+    .barra{
+        display: flex;
+        flex-direction: row;
+        li{
+            margin: 10px;
+        }
+    }
+   
+}
+@media (min-width: 481px) and (max-width: 768px){
+    .espaciado{
+        padding-top: 80px;
+    }
+    .logo{
+        width:40%;
+    }
+    #item-container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    }
+    .barra{
+        display: flex;
+        flex-direction: row;
+    }
+    li{
+        margin: 10px;
+    }
+    
+}

@@ -7,7 +7,6 @@ function Item({ producto}) {
             <img src={producto.img3} alt="pixeles" className="text-center rounded-circle probar" />
             <p className="precio">${producto.precio}</p>
             <button type="button" className="btn btn-dark ajusteCard"><Link to={`/producto/${producto.id}`}>Ver mas</Link></button>
-
         </div>
     )
 }

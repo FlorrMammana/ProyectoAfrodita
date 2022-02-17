@@ -3,6 +3,7 @@ import {useState} from "react"
 const Count = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(initial)
+
     const aumentarContador = () => {
         if(contador < stock) {
             setContador(contador + 1)

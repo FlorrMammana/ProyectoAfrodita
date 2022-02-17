@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 import Example from '../items/Modal';
 
 const Cart = () =>{ 
-
-    const {cartArray, borrarItem, borrarTodo} = useContext(CartContext);
-    
+    const {cartArray, borrarItem, borrarTodo} = useContext(CartContext);  
+      
     if(cartArray.length === 0){
       return(
         <div className="carritoVacio espaciado">

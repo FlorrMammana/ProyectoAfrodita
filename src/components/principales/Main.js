@@ -3,9 +3,7 @@ function Main(){
     
     return(
         <main>
-            <header>
                 <ItemListContainer initial={1} stock={10}/>
-            </header>
         </main>
     )
 }

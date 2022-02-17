@@ -1,6 +1,5 @@
 
 import React, { createContext, useState } from 'react';
-
 export const CartContext = createContext();
 
 const CartProvider = ({children}) => {
@@ -36,8 +35,8 @@ const isInCart = (id) =>{
   }
 
 const calculo = (precio, count) =>{
-let calcular = (precio * count)
-setCartArray(calcular)
+    let calcular = (precio * count)
+    setCartArray(calcular)
 }
 const value = {
 cartArray,
